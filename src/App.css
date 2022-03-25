@@ -1,38 +1,60 @@
 .App {
   text-align: center;
+  font: 20px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+.board {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.square {
+  border: 1px solid #999;
+  float: left;
+  font-size: 40px;
+  height: 80px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+}
+button:hover {
+  cursor: pointer;
+}
+.status,
+.restart {
+  margin-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/** button styles **/
+.restart {
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.restart:active {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.restart:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.restart:focus {
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 50%);
 }
